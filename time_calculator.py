@@ -14,3 +14,12 @@ def add_time(start_time, duration, start_day=None):
     end_time_minute = (start_time_minute + duration_minute) % 60
     carry_hour = (start_time_minute + duration_minute) // 60
     end_time_hour = (start_time_hour + duration_hour + carry_hour) % 24
+    
+    # Determine the period (AM or PM) and adjust the hour
+    if end_time_hour < 12:
+        end_time_period = "AM"
+    else:
+        end_time_period = "PM"
+        if end_time_hour > 12:
+            end_time_hour -= 12
+

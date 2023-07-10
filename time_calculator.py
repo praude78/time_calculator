@@ -22,4 +22,8 @@ def add_time(start_time, duration, start_day=None):
         end_time_period = "PM"
         if end_time_hour > 12:
             end_time_hour -= 12
+            
+    # Determine the number of days later
+    days_later = (start_time_hour + duration_hour + carry_hour) // 24
+
 

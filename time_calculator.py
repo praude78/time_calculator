@@ -25,5 +25,14 @@ def add_time(start_time, duration, start_day=None):
             
     # Determine the number of days later
     days_later = (start_time_hour + duration_hour + carry_hour) // 24
+    
+    # Determine the day of the week
+    days_of_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    if start_day:
+        start_day = start_day.lower().capitalize()
+        start_day_index = days_of_week.index(start_day)
+        end_day_index = (start_day_index + days_later) % 7
+        end_day = days_of_week[end_day_index]
+
 
 

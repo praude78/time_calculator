@@ -6,3 +6,6 @@ def add_time(start_time, duration, start_day=None):
     # Parse the duration time
     duration_hour, duration_minute = map(int, duration.split(":"))
 
+    # Convert start time to 24-hour format
+    if start_time_period == "PM":
+        start_time_hour += 12
